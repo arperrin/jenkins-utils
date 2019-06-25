@@ -15,18 +15,18 @@ def print(line){
   println "${line}"
 }
 
-def search(){
-  // def url = "http://192.168.33.10:8081/service/rest/v1/searc?sort=version&direction=desc&q=${keyword}&repository=${repository}"
-  def url = "http://192.168.33.10:8081/service/rest/v1/searc?sort=version&direction=desc&q=jquery"
-  def get = new HttpGet(url)
-  get.addHeader("content-type", "application/json")
+// def search(){
+//   // def url = "http://192.168.33.10:8081/service/rest/v1/searc?sort=version&direction=desc&q=${keyword}&repository=${repository}"
+//   def url = "http://192.168.33.10:8081/service/rest/v1/searc?sort=version&direction=desc&q=jquery"
+//   def get = new HttpGet(url)
+//   get.addHeader("content-type", "application/json")
 
-  def client = HttpClientBuilder.create().build()
-  def response = client.execute(get)
+//   def client = HttpClientBuilder.create().build()
+//   def response = client.execute(get)
 
-  def bufferedReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()))
-  def jsonResponse = bufferedReader.getText()
-  echo("response: \n" + jsonResponse)
-}
+//   def bufferedReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()))
+//   def jsonResponse = bufferedReader.getText()
+//   echo("response: \n" + jsonResponse)
+// }
 
 return this;
