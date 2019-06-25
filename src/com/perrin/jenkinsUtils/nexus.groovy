@@ -19,7 +19,7 @@ def broken(keyword = '*', repository = '*'){
   println "url: ${url}"
 
   HttpClientBuilder.create().build().withCloseable { client -> 
-    final request = new HttpGet('url')
+    final request = new HttpGet(url)
 
     client.execute(request).withCloseable { response ->
       assert response.statusLine.statusCode == 200
