@@ -17,14 +17,15 @@ def search(keyword = '*', repository = '*'){
     final request = new HttpGet(url)
     request.addHeader("content-type", "application/json")
 
-    client.execute(request).withCloseable{ response ->
-      if (response.statusLine.statusCode != 200){
-        println "Error from server: ${response.statusLine.statusCode}"
-      }
+    client.execute(request).withCloseable { response ->
+      assert.response.statusLine.statusCode == 200
+      // if (response.statusLine.statusCode != 200) {
+      //   println "Error from server: ${response.statusLine.statusCode}"
+      // }
 
-      def bufferedReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()))
-      def jsonResponse = bufferedReader.getText()
-      println "response: \n" + jsonResponse
+      // def bufferedReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()))
+      // def jsonResponse = bufferedReader.getText()
+      // println "response: \n" + jsonResponse
     }
   }
 }
