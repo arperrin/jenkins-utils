@@ -39,8 +39,11 @@ def broken(keyword = '*', repository = '*'){
 
 def search(keyword = '*', repository = '*'){
   def url = "http://192.168.33.10:8081/service/rest/v1/search?sort=version&direction=desc&q=${keyword}&repository=${repository}"
-  def get = new HttpGet(url)
-  get.addHeader("content-type", "application/json")
+    def request = RequestBuilder
+      .create("GET")
+      .setUri(url)
+      .setHeader(HttpHeaders.CONTENT_TYPE, "application/json")
+      .build()
 
   def client = HttpClientBuilder.create().build()
   def response = client.execute(get)
