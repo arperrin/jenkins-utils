@@ -9,9 +9,8 @@ import org.apache.http.client.methods.*
 import org.apache.http.entity.*
 import org.apache.http.impl.client.*
 
-public class Nexus {
-  def steps;
-  public Nexus(steps){this.steps = steps}
+def steps;
+nexus(steps){this.steps = steps}
 
   // def search(keyword,repository){
   def search(){
@@ -28,5 +27,5 @@ public class Nexus {
     steps.println("response: \n" + jsonResponse)
     return jsonResponse;
   }
-}
+
 return this;
