@@ -31,4 +31,4 @@ def search(){
   echo("response: \n" + jsonResponse)
 }
 
-// return this;
+return this;
