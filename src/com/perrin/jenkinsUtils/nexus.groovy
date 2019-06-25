@@ -21,3 +21,5 @@ def search(keyword,repository){
   def jsonResponse = bufferedReader.getText()
   return jsonResponse;
 }
+
+return this;
