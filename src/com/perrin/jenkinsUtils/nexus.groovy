@@ -10,9 +10,9 @@ import org.apache.http.entity.*
 import org.apache.http.impl.client.*
 
   // def search(keyword,repository){
-def print(line){
+def logLine(myLine){
   println "This is printing a line"
-  println "${line}"
+  println "${myLine}"
 }
 
 // def search(){
@@ -29,4 +29,4 @@ def print(line){
 //   echo("response: \n" + jsonResponse)
 // }
 
-return this;
+// return this;
