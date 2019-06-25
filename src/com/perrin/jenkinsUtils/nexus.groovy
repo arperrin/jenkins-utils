@@ -9,8 +9,9 @@ import org.apache.http.client.methods.*
 import org.apache.http.entity.*
 import org.apache.http.impl.client.*
 
-def search(keyword = "*",repository = "*"){
+def search(keyword = '*', repository = '*'){
   def url = "http://192.168.33.10:8081/service/rest/v1/searc?sort=version&direction=desc&q=${keyword}&repository=${repository}"
+  println "url: ${url}"
 
   HttpClientBuilder.create().build().withCloseable { client -> 
     final request = new HttpGet(url)
