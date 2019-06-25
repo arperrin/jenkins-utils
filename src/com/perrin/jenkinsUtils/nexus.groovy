@@ -21,7 +21,7 @@ def search(){
 
   def bufferedReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()))
   def jsonResponse = bufferedReader.getText()
-  println "response: \n" + jsonResponse
+  steps.println("response: \n" + jsonResponse)
   return jsonResponse;
 }
 
