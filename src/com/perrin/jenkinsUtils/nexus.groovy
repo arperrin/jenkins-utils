@@ -39,14 +39,14 @@ def broken(keyword = '*', repository = '*'){
 
 def search(keyword = '*', repository = '*'){
   def url = "http://192.168.33.10:8081/service/rest/v1/search?sort=version&direction=desc&q=${keyword}&repository=${repository}"
-    def request = RequestBuilder
-      .create("GET")
-      .setUri(url)
-      .setHeader(HttpHeaders.CONTENT_TYPE, "application/json")
-      .build()
+  def request = RequestBuilder
+    .create("GET")
+    .setUri(url)
+    .setHeader(HttpHeaders.CONTENT_TYPE, "application/json")
+    .build()
 
   def client = HttpClientBuilder.create().build()
-  def response = client.execute(get)
+  def response = client.execute(request)
   if (response.statusLine.statusCode != 200) {
     println "Error from server: ${response.statusLine.statusCode}"
   }
