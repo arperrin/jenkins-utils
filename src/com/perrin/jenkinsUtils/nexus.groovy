@@ -14,8 +14,11 @@ def search(keyword = '*', repository = '*'){
   println "url: ${url}"
 
   HttpClientBuilder.create().build().withCloseable { client -> 
-    final request = new HttpGet(url)
-    request.addHeader("content-type", "application/json")
+    def request = RequestBuilder
+      .create("GET")
+      .setUri(url)
+      .setHeader(HttpHeaders.CONTENT_TYPE, "application/json")
+      .build()
 
     client.execute(request).withCloseable { response ->
       assert response.statusLine.statusCode == 200
