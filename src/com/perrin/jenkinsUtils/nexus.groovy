@@ -7,7 +7,7 @@ import groovy.json.*
 
 import org.apache.http.HttpHeaders
 import org.apache.http.client.config.RequestConfig
-import org.apahce.http.client.methods.HttpGet
+import org.apache.http.client.methods.HttpGet
 import org.apache.http.client.methods.HttpUriRequest
 import org.apache.http.client.methods.RequestBuilder
 import org.apache.http.impl.client.HttpClientBuilder
