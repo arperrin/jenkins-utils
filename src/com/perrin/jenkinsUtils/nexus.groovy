@@ -10,6 +10,11 @@ import org.apache.http.entity.*
 import org.apache.http.impl.client.*
 
   // def search(keyword,repository){
+def print(line){
+  println "This is printing a line"
+  println "${line}"
+}
+
 def search(){
   // def url = "http://192.168.33.10:8081/service/rest/v1/searc?sort=version&direction=desc&q=${keyword}&repository=${repository}"
   def url = "http://192.168.33.10:8081/service/rest/v1/searc?sort=version&direction=desc&q=jquery"
