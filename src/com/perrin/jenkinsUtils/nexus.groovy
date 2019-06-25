@@ -18,7 +18,7 @@ def search(keyword = '*', repository = '*'){
     request.addHeader("content-type", "application/json")
 
     client.execute(request).withCloseable { response ->
-      assert.response.statusLine.statusCode == 200
+      assert response.statusLine.statusCode == 200
       // if (response.statusLine.statusCode != 200) {
       //   println "Error from server: ${response.statusLine.statusCode}"
       // }
