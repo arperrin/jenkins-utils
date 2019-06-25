@@ -19,6 +19,7 @@ def search(keyword,repository){
 
   def bufferedReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()))
   def jsonResponse = bufferedReader.getText()
+  println "response: \n" + jsonResponse
   return jsonResponse;
 }
 
