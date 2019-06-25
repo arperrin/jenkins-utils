@@ -7,17 +7,13 @@ import groovy.json.*
 
 import org.apache.http.HttpHeaders;
 import org.apache.http.client.config.RequestConfig;
-// import org.apache.http.client.methods.*
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.methods.RequestBuilder;
-// import org.apache.http.impl.client.*
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
-// import org.apache.http.entity.*
 import org.apache.http.entity.StringEntity;
 
-
-def search(keyword = '*', repository = '*'){
+def broken(keyword = '*', repository = '*'){
   def url = "http://192.168.33.10:8081/service/rest/v1/search?sort=version&direction=desc&q=${keyword}&repository=${repository}"
   println "url: ${url}"
 
@@ -39,6 +35,22 @@ def search(keyword = '*', repository = '*'){
       // println "response: \n" + jsonResponse
     }
   }
+}
+
+def search(keyword = '*', repository = '*'){
+  def url = "http://192.168.33.10:8081/service/rest/v1/search?sort=version&direction=desc&q=${keyword}&repository=${repository}"
+  def get = new HttpGet(url)
+  get.addHeader("content-type", "application/json")
+
+  def client = HttpClientBuilder.create().build()
+  def response = client.execute(get)
+  if (response.statusLine.statusCode != 200) {
+    println "Error from server: ${response.statusLine.statusCode}"
+  }
+
+  def bufferedReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()))
+  def jsonResponse = bufferedReader.getText()
+  println "response: \n" + jsonResponse
 }
 
 return this;
