@@ -9,10 +9,10 @@ import org.apache.http.client.methods.*
 import org.apache.http.entity.*
 import org.apache.http.impl.client.*
 
-class Nexus(){
+class Nexus {
   def steps;
   Nexus(steps){this.steps = steps}
-  
+
   // def search(keyword,repository){
   def search(){
     // def url = "http://192.168.33.10:8081/service/rest/v1/searc?sort=version&direction=desc&q=${keyword}&repository=${repository}"
