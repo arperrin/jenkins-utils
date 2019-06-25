@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-package com.perrin.jenkins-utils;
+package com.perrin.jenkins_utils;
 
 @Grab(group='org.apache.httpcomponents', module='httpclient', version='4.5.2')
 
