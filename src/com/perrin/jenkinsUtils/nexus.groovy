@@ -10,14 +10,9 @@ import org.apache.http.entity.*
 import org.apache.http.impl.client.*
 
   // def search(keyword,repository){
-def logLine(myLine){
-  println "This is printing a line"
-  println "${myLine}"
-}
-
 def search(){
   // def url = "http://192.168.33.10:8081/service/rest/v1/searc?sort=version&direction=desc&q=${keyword}&repository=${repository}"
-  def url = "http://192.168.33.10:8081/service/rest/v1/searc?sort=version&direction=desc&q=jquery"
+  def url = "http://192.168.33.10:8081/service/rest/v1/search?sort=version&direction=desc&q=jquery"
   def get = new HttpGet(url)
   get.addHeader("content-type", "application/json")
 
@@ -26,9 +21,7 @@ def search(){
 
   def bufferedReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()))
   def jsonResponse = bufferedReader.getText()
-  println "line 1"
-  println("line 2")
-  echo("response: \n" + jsonResponse)
+  println "response: \n" + jsonResponse
 }
 
 return this;
