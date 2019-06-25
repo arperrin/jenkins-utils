@@ -5,9 +5,17 @@ package com.perrin.jenkinsUtils;
 
 import groovy.json.*
 
-import org.apache.http.client.methods.*
-import org.apache.http.entity.*
-import org.apache.http.impl.client.*
+import org.apache.http.HttpHeaders;
+import org.apache.http.client.config.RequestConfig;
+// import org.apache.http.client.methods.*
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.client.methods.RequestBuilder;
+// import org.apache.http.impl.client.*
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.util.EntityUtils;
+// import org.apache.http.entity.*
+import org.apache.http.entity.StringEntity;
+
 
 def search(keyword = '*', repository = '*'){
   def url = "http://192.168.33.10:8081/service/rest/v1/search?sort=version&direction=desc&q=${keyword}&repository=${repository}"
