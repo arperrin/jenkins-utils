@@ -9,9 +9,9 @@ import org.apache.http.client.methods.*
 import org.apache.http.entity.*
 import org.apache.http.impl.client.*
 
-class Nexus {
+public class Nexus {
   def steps;
-  Nexus(steps){this.steps = steps}
+  public Nexus(steps){this.steps = steps}
 
   // def search(keyword,repository){
   def search(){
